@@ -1,0 +1,104 @@
+ {
+  "project": {
+    "name": "New project",
+    "id": "new",
+    "creationTs": 1683562604978,
+    "lastModifiedTs": 1684444931241
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "palm_textgen_fg7dns",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 560,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 80,
+          "posY": -96,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "input_text_5ja7cx",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_5ja7cx",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "leftOfNode": "palm_textgen_fg7dns",
+          "previewX": 208,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -240,
+          "posY": -80,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Which US president would win in a fight?",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_20to0t",
+        "displayLabel": "Output Text",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "rightOfNode": "palm_textgen_fg7dns",
+          "previewX": 928,
+          "previewY": 0,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 368,
+          "posY": -80,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "palm_textgen_fg7dns",
+              "outputId": "answer"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
